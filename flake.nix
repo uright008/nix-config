@@ -27,6 +27,7 @@
           ./fonts.nix
           ./nopasswd.nix
           ./custom.nix
+          ./im/fcitx.nix
 
           home-manager.nixosModules.home-manager
           {

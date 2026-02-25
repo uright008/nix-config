@@ -34,7 +34,6 @@
     clash-verge-rev # proxy tools for bypasing GFW
 
     # misc
-    kdePackages.kleopatra
     microsoft-edge
     synology-drive-client
     cowsay
@@ -45,7 +44,6 @@
     gnutar
     gawk
     zstd
-    gnupg
     alsa-utils
 
     # media
@@ -68,6 +66,7 @@
     lutris
     protontricks
     wine-staging
+    hmcl
 
     # nix related
     #
@@ -128,6 +127,21 @@
         name = "Qing Xu";
         email = "admin@uright.icu";
     };
+    signing = {
+      signByDefault = true;
+      key = "7FC8941B14BFC9DE";
+    };
   };
+  services = {
+      ## Enable gpg-agent with ssh support
+      gpg-agent = {
+        enable = true;
+        enableSshSupport = true;
+        enableZshIntegration = true;
+        # pinentry is a collection of simple PIN or passphrase dialogs used for
+        # password entry
+        pinentryPackage = pkgs.pinentry-qt;
+      };
+    };
   home.stateVersion = "25.11"; # You can update Home Manager without changing this value
 }

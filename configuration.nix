@@ -123,6 +123,9 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
+    vulkan-loader
+    vulkan-validation-layers
+    vulkan-extension-layer
     git
     wget
     nil
@@ -135,6 +138,9 @@
     gnutar
     gawk
     zstd
+    # Crypto
+    pinentry-all
+    kdePackages.kleopatra
     gnupg
   ];
 
