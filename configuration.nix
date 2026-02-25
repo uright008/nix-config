@@ -113,7 +113,10 @@
     #  thunderbird
     ];
   };
-
+  programs.throne = {
+    enable = true;
+    tunMode.enable = true;
+  };
   # Install firefox.
   programs.firefox.enable = true;
 

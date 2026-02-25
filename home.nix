@@ -31,7 +31,6 @@
     socat # replacement of openbsd-netcat
     nmap # A utility for network discovery and security auditing
     ipcalc  # it is a calculator for the IPv4/v6 addresses
-    clash-verge-rev # proxy tools for bypasing GFW
 
     # misc
     microsoft-edge
@@ -96,42 +95,46 @@
     pciutils # lspci
     usbutils # lsusb
   ];
-  programs.vscode = {
-    enable = true;
-    profiles.default.extensions = with pkgs.vscode-extensions; [
-      yzhang.markdown-all-in-one # markdown support
-      ms-python.python
-      ms-vscode.cpptools-extension-pack
-      esbenp.prettier-vscode
-      ms-azuretools.vscode-docker
-      twxs.cmake
-      redhat.java
-      eamodio.gitlens
-      ms-vscode-remote.remote-ssh
-      jnoortheen.nix-ide
-    ];
-  };
-  programs.starship = {
-    enable = true;
-    # 自定义配置
-    settings = {
-      add_newline = false;
-      aws.disabled = true;
-      gcloud.disabled = true;
-      line_break.disabled = true;
+
+  programs = {
+    vscode = {
+      enable = true;
+      profiles.default.extensions = with pkgs.vscode-extensions; [
+        yzhang.markdown-all-in-one # markdown support
+        ms-python.python
+        ms-vscode.cpptools-extension-pack
+        esbenp.prettier-vscode
+        ms-azuretools.vscode-docker
+        twxs.cmake
+        redhat.java
+        eamodio.gitlens
+        ms-vscode-remote.remote-ssh
+        jnoortheen.nix-ide
+      ];
+    };
+    starship = {
+      enable = true;
+      # 自定义配置
+      settings = {
+        add_newline = false;
+        aws.disabled = true;
+        gcloud.disabled = true;
+        line_break.disabled = true;
+      };
+    };
+    git = {
+      enable = true;
+      settings.user = {
+          name = "Qing Xu";
+          email = "admin@uright.icu";
+      };
+      signing = {
+        signByDefault = true;
+        key = "7FC8941B14BFC9DE";
+      };
     };
   };
-  programs.git = {
-    enable = true;
-    settings.user = {
-        name = "Qing Xu";
-        email = "admin@uright.icu";
-    };
-    signing = {
-      signByDefault = true;
-      key = "7FC8941B14BFC9DE";
-    };
-  };
+
   services = {
       ## Enable gpg-agent with ssh support
       gpg-agent = {
