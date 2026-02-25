@@ -23,7 +23,9 @@
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
-
+  boot.kernelParams = [
+    "nvidia_drm.modeset=1"
+  ];
   # Use latest kernel.
   boot.kernelPackages = pkgs.linuxPackages_latest;
 #   boot.kernelPackages = pkgs.linuxPackagesFor (pkgs.linux_6_19.override {
@@ -123,7 +125,7 @@
   environment.systemPackages = with pkgs; [
     git
     wget
-    nixd
+    nil
     alsa-utils
     cowsay
     file

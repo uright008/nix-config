@@ -31,9 +31,10 @@
     socat # replacement of openbsd-netcat
     nmap # A utility for network discovery and security auditing
     ipcalc  # it is a calculator for the IPv4/v6 addresses
-    flclash # proxy tools for bypasing GFW
+    clash-verge-rev # proxy tools for bypasing GFW
 
     # misc
+    kdePackages.kleopatra
     microsoft-edge
     synology-drive-client
     cowsay
@@ -52,6 +53,11 @@
     audacious-plugins
     vlc
     mpv
+
+    # SMS
+    telegram-desktop
+    qq
+    wechat
 
     # java
     zulu
